@@ -25,7 +25,7 @@ Please make sure you have enough memory.
 For context, we ran our experiments on 8 NVIDIA V100 GPUs.
 
 ### fMoW-Temporal
-Note: the preprocessed dataset would be uploaded soon.
+You can download the fMoW dataset [here](https://github.com/fMoW/dataset). Then follow this piece of [code](https://github.com/fMoW/baseline/blob/master/code/data_ml_functions/dataFunctions.py#L107) to preprocess it. We will also upload the pre-processed dataset soon. The metadata files are [here](https://drive.google.com/drive/folders/1-xSXNpq0xJ4z3F7BPzEcZ04eZ7LqPbYD?usp=share_link).
 
 After you download the dataset and metadata files, your directory should look like:
 ```

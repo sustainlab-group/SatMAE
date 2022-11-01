@@ -76,7 +76,7 @@ def get_args_parser():
                         help='epochs to warmup LR')
 
     # Dataset parameters
-    parser.add_argument('--train_path', default='/atlas/u/buzkent/patchdrop/data/fMoW/train_62classes.csv', type=str,
+    parser.add_argument('--train_path', default='/home/train_62classes.csv', type=str,
                         help='Train .csv path')
     parser.add_argument('--dataset_type', default='rgb', choices=['rgb', 'temporal', 'sentinel', 'euro_sat', 'naip'],
                         help='Whether to use fmow rgb, sentinel, or other dataset.')
