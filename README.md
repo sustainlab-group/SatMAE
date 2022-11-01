@@ -108,7 +108,7 @@ python -m torch.distributed.launch --nproc_per_node=8 \
 Similarly, you are using our provided checkpoint, please add `--nb_classes 1000`.
 
 ### Model Weights
-TODO
+You can download model weights pre-trained on fMoW-temporal and weights finetuned on fMoW-temporal [here](https://drive.google.com/drive/folders/1b9KLrt0hKZsn-E_PWa7CVK9dSmGCCcVO?usp=sharing).
 
 
 ## Multi-Spectral SatMAE
