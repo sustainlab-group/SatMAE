@@ -155,7 +155,7 @@ python -m torch.distributed.launch --nproc_per_node=8 main_pretrain.py \
 --train_path /home/fmow-sentinel-filtered-csv/train.csv \
 --output_dir /home/experiments/pretrain \
 --log_dir /home/experiments/pretrain \
---resume /home/experiments/pretrain/checkpoint-175.pth \
+--resume /home/experiments/pretrain/checkpoint-175.pth
 ```
 
 
@@ -182,10 +182,19 @@ To resume a finetuning job, you can replace `--finetune path/to/pretrained_check
 with `--resume path/to/finetune_checkpoint.pth` in the command above.
 
 ### Model Weights
-TODO
+We will be uploading model checkpoints [here](https://doi.org/10.5281/zenodo.7325338).
+The pretrained checkpoints have been trained for 200 epochs, 
+so the accuracy numbers might be higher than in the paper 
+(where the models were pretrained for 50 epochs).  
+The Top 1 accuracy is measured on the validation set of [fMoW-Sentinel](https://purl.stanford.edu/vg497cb6002).
+
+Model                  | Top 1 Accuracy | Pretrain | Finetune |
+---------------------- | -------------- | -------- | -------- |
+ViT-Base (200 epochs)  | xx.xx%         | TODO     | TODO     |
+ViT-Large (200 epochs) | 63.84%         | [download](https://zenodo.org/record/7325339/files/pretrain-vit-large-e199.pth) | [download](https://zenodo.org/record/7325339/files/finetune-vit-large-e7.pth)
 
 ## Acknowledgements
-Code from this repository is inspired from the Masked Autoencoders (MAE) repository ([link](https://github.com/facebookresearch/mae)).
+Code from this repository is inspired from the Masked Autoencoders (MAE) [repository](https://github.com/facebookresearch/mae).
 
 ## Citation
 If you found our project helpful, please cite our paper:
