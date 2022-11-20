@@ -190,8 +190,8 @@ The Top 1 accuracy is measured on the validation set of [fMoW-Sentinel](https://
 
 Model                  | Top 1 Accuracy | Pretrain | Finetune |
 ---------------------- | -------------- | -------- | -------- |
-ViT-Base (200 epochs)  | xx.xx%         | TODO     | TODO     |
-ViT-Large (200 epochs) | 63.84%         | [download](https://zenodo.org/record/7325339/files/pretrain-vit-large-e199.pth) | [download](https://zenodo.org/record/7325339/files/finetune-vit-large-e7.pth)
+ViT-Base (200 epochs)  | 62.65%         | [download](https://zenodo.org/record/7338613/files/pretrain-vit-base-e199.pth)  | [download](https://zenodo.org/record/7338613/files/finetune-vit-base-e7.pth)     |
+ViT-Large (200 epochs) | 63.84%         | [download](https://zenodo.org/record/7338613/files/pretrain-vit-large-e199.pth) | [download](https://zenodo.org/record/7338613/files/finetune-vit-large-e7.pth)
 
 ## Acknowledgements
 Code from this repository is inspired from the Masked Autoencoders (MAE) [repository](https://github.com/facebookresearch/mae).
