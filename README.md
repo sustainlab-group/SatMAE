@@ -105,11 +105,22 @@ python -m torch.distributed.launch --nproc_per_node=8 \
     --test_path <PATH_TO_DATASET_ROOT_FOLDER>/val_62classes.csv
 ```
 
-Similarly, you are using our provided checkpoint, please add `--nb_classes 1000`.
+Similarly, if you are using our provided checkpoint, please add `--nb_classes 1000`.
 
 ### Model Weights
-You can download model weights pre-trained on fMoW-temporal and weights finetuned on fMoW-temporal [here](https://zenodo.org/record/7369797#.Y4PxFeyZOnA).
+You can download model weights pre-trained on fMoW-temporal and weights finetuned on fMoW-temporal [here](https://doi.org/10.5281/zenodo.7369796).
 
+#### fMoW Non-Temporal Checkpoints
+Model                  | Top 1 Accuracy | Pretrain | Finetune |
+---------------------- | -------------- | -------- | -------- |
+ViT-Large              | 77.84%         | [download](https://zenodo.org/record/7369797/files/fmow_pretrain.pth) | [download](https://zenodo.org/record/7369797/files/fmow_finetune.pth)    |
+
+#### fMoW Temporal Checkpoints
+Model                  | Top 1 Accuracy | Pretrain | Finetune |
+---------------------- | -------------- | -------- | -------- |
+ViT-Large              | 81.49%         | [download](https://zenodo.org/record/7369797/files/pretrain_fmow_temporal.pth) | [download](https://zenodo.org/record/7369797/files/finetune_fmow_temporal.pth)    |
+
+The accuracy of SatMAE on fMoW-Temporal is achieved using test-time augmentation (see paper).
 
 ## Multi-Spectral SatMAE
 Training multi-spectral SatMAE is similar to training 
@@ -133,31 +144,19 @@ python -m torch.distributed.launch --nproc_per_node=8 main_pretrain.py \
 --batch_size 16 --accum_iter 32 --blr 0.0001 \
 --epochs 200 --warmup_epochs 20 --num_workers 16 \
 --input_size 96 --patch_size 8 \
---model_type group_c \
---dataset_type sentinel --dropped_bands 0 9 10 \
---train_path /home/fmow-sentinel-filtered-csv/train.csv \
---output_dir /home/experiments/pretrain \
---log_dir /home/experiments/pretrain
-```
-
-For an example of additional arguments, you can specify them like so:
-```shell
-python -m torch.distributed.launch --nproc_per_node=8 main_pretrain.py \
---wandb satmae_pretrain \
---batch_size 16 --accum_iter 32 --blr 0.0001 \
---epochs 200 --warmup_epochs 20 --num_workers 16 \
---input_size 96 --patch_size 8 \
---mask_ratio 0.9 --spatial_mask \
---norm_pix_loss \
+--mask_ratio 0.75 \
 --model_type group_c \
 --dataset_type sentinel --dropped_bands 0 9 10 \
 --grouped_bands 0 1 2 6 --grouped_bands 3 4 5 7 --grouped_bands 8 9 \
 --train_path /home/fmow-sentinel-filtered-csv/train.csv \
 --output_dir /home/experiments/pretrain \
---log_dir /home/experiments/pretrain \
---resume /home/experiments/pretrain/checkpoint-175.pth
+--log_dir /home/experiments/pretrain
 ```
+You can use the `--spatial_mask` argument to toggle on consistent spatial masking
+(rather than independent masking). See paper for details (independent masking performs better).
 
+To resume a pretraining job, you can use `--resume PATH/TO/CKPT.PTH` 
+(eg: `--resume /home/experiments/pretrain/checkpoint-175.pth`).
 
 
 ### Finetuning
@@ -191,7 +190,7 @@ The Top 1 accuracy is measured on the validation set of [fMoW-Sentinel](https://
 Model                  | Top 1 Accuracy | Pretrain | Finetune |
 ---------------------- | -------------- | -------- | -------- |
 ViT-Base (200 epochs)  | 62.65%         | [download](https://zenodo.org/record/7338613/files/pretrain-vit-base-e199.pth)  | [download](https://zenodo.org/record/7338613/files/finetune-vit-base-e7.pth)     |
-ViT-Large (200 epochs) | 63.84%         | [download](https://zenodo.org/record/7338613/files/pretrain-vit-large-e199.pth) | [download](https://zenodo.org/record/7338613/files/finetune-vit-large-e7.pth)
+ViT-Large (200 epochs) | 63.84%         | [download](https://zenodo.org/record/7338613/files/pretrain-vit-large-e199.pth) | [download](https://zenodo.org/record/7338613/files/finetune-vit-large-e7.pth)    |
 
 ## Acknowledgements
 Code from this repository is inspired from the Masked Autoencoders (MAE) [repository](https://github.com/facebookresearch/mae).
