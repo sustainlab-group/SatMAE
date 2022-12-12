@@ -118,9 +118,9 @@ ViT-Large              | 77.78%         | [download](https://zenodo.org/record/7
 #### fMoW Temporal Checkpoints
 Model                  | Top 1 Accuracy | Pretrain | Finetune |
 ---------------------- | -------------- | -------- | -------- |
-ViT-Large              | 79.99% (without test-time aug)         | [download](https://zenodo.org/record/7369797/files/pretrain_fmow_temporal.pth), 50 epochs | [download](https://zenodo.org/record/7369797/files/finetune_fmow_temporal.pth), 24 epochs    |
+ViT-Large              | 79.99%         | [download](https://zenodo.org/record/7369797/files/pretrain_fmow_temporal.pth), 50 epochs | [download](https://zenodo.org/record/7369797/files/finetune_fmow_temporal.pth), 24 epochs    |
 
-The accuracy of SatMAE on fMoW-Temporal is achieved using test-time augmentation (see paper).
+The accuracy of SatMAE on fMoW-Temporal (reported above) is achieved without using test-time augmentation (see paper).
 
 ## Multi-Spectral SatMAE
 Training multi-spectral SatMAE is similar to training 
