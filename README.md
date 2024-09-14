@@ -1,14 +1,14 @@
 # SatMAE (NeurIPS 2022)
 **[Project](https://sustainlab-group.github.io/SatMAE/)** | 
 **[Paper](https://arxiv.org/abs/2207.08051)** | 
-**[Video](https://recorder-v3.slideslive.com/?share=75759&s=4597a5f4-7f86-4e18-a11b-fbac51cb7616)**
+**[Video](https://slideslive.com/38989942/satmae-pretraining-transformers-for-temporal-and-multispectral-satellite-imagery)**
 
 This is the official repository for the NeurIPS 2022 paper 
 "_SatMAE: Pre-training Transformers for Temporal and Multi-Spectral Satellite Imagery_".
 
 Authors: 
 [Yezhen Cong](https://www.linkedin.com/in/yezhen-cong-60a449204/) <sup>1</sup>,
-[Samar Khanna](https://www.linkedin.com/in/samar-khanna-133b8190/) <sup>1</sup>, 
+[Samar Khanna](https://www.samarkhanna.com/) <sup>1</sup>, 
 [Chenlin Meng](https://chenlin9.github.io/), 
 [Patrick Liu](https://web.stanford.edu/~pliu1/), 
 [Erik Rozi](https://www.linkedin.com/in/erik-rozi/), 
